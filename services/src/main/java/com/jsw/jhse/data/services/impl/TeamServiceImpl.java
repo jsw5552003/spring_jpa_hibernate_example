@@ -7,7 +7,10 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.jsw.jhse.data.AppConstants.League;
+import com.jsw.jhse.data.jpa.domain.City;
 import com.jsw.jhse.data.jpa.domain.Team;
+import com.jsw.jhse.data.jpa.repository.CityRepository;
 import com.jsw.jhse.data.jpa.repository.TeamRepository;
 import com.jsw.jhse.data.services.TeamService;
 
@@ -17,10 +20,43 @@ public class TeamServiceImpl implements TeamService {
 	
 	@Resource
     private TeamRepository teamRepository;
+	
+	@Resource
+	private CityRepository cityRepository;
 
 	@Override
 	public List<Team> getAllTeams() {
-		return teamRepository.findAll();
+		List<Team> teams = teamRepository.findAll();
+		for(Team team : teams)
+		{
+			team.getPlayers().size();
+		}
+		return teams;
+	}
+
+	@Override
+	public List<Team> getAllTeamsByCity(City city) {
+		List<Team> teams = teamRepository.findByCity(city);
+		for(Team team : teams)
+		{
+			team.getPlayers().size();
+		}
+		return teams;
+	}
+
+	@Override
+	public List<Team> getAllTeamsByLeague(League league) {
+		List<Team> teams = teamRepository.findByLeague(league);
+		for(Team team : teams)
+		{
+			team.getPlayers().size();
+		}
+		return teams;
+	}
+
+	@Override
+	public List<City> getAllCities() {
+		return cityRepository.findAll();
 	}
 
 }
