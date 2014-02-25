@@ -7,7 +7,9 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.jsw.jhse.data.AppConstants;
 import com.jsw.jhse.data.AppConstants.League;
+import com.jsw.jhse.data.dto.DropDownDto;
 import com.jsw.jhse.data.jpa.domain.City;
 import com.jsw.jhse.data.jpa.domain.Team;
 import com.jsw.jhse.data.jpa.repository.CityRepository;
@@ -52,6 +54,11 @@ public class TeamServiceImpl implements TeamService {
 			team.getPlayers().size();
 		}
 		return teams;
+	}
+	
+	public List<DropDownDto> getAllLeagues()
+	{
+		return AppConstants.getLeaguesAsDropDownDtos();
 	}
 
 	@Override
