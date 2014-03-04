@@ -11,12 +11,18 @@ public interface TeamService {
 	
 	List<Team> getAllTeams();
 	
+	List<DropDownDto> getAllTeamsAsDropDown();
+	
 	List<Team> getAllTeamsByCity(City city);
 	
 	List<Team> getAllTeamsByLeague(AppConstants.League league);
 	
 	List<City> getAllCities();
 	
-	public List<DropDownDto> getAllLeagues();
+	List<DropDownDto> getAllCitiesAsDropDown();
+	
+	List<DropDownDto> getAllLeaguesAsDropDown();
+	
+	List<DropDownDto> getAllPlayersAsDropDown();
 
 }

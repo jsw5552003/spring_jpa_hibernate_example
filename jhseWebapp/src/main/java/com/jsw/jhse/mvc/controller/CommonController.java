@@ -29,11 +29,56 @@ public class CommonController {
     public @ResponseBody
     List<DropDownDto> getAllLeagues() {
 
-        log.info("Calling getBusinessUnits()...");
+        log.info("Calling getAllLeagues()...");
 
-        List<DropDownDto> buDtoList = teamService.getAllLeagues();
+        List<DropDownDto> buDtoList = teamService.getAllLeaguesAsDropDown();
 
         return buDtoList;
+    }
+    
+    /**
+     * Returns all cities as a JSON string.
+     * 
+     * @return A <code>List</code> of <code>DropDownDto</code> objects as a JSON string.
+     */
+    @RequestMapping(value = "/json/getAllCities.do")
+    public @ResponseBody
+    List<DropDownDto> getAllCities() {
+
+        log.info("getAllCities: starting...");
+        List<DropDownDto> dropDownList = teamService.getAllCitiesAsDropDown();
+        log.info("getAllCities: returning...");
+        return dropDownList;
+    }
+    
+    /**
+     * Returns all teams as a JSON string.
+     * 
+     * @return A <code>List</code> of <code>DropDownDto</code> objects as a JSON string.
+     */
+    @RequestMapping(value = "/json/getAllTeams.do")
+    public @ResponseBody
+    List<DropDownDto> getAllTeams() {
+
+        log.info("getAllTeams: starting...");
+        List<DropDownDto> dropDownList = teamService.getAllTeamsAsDropDown();
+        log.info("getAllTeams: returning...");
+        return dropDownList;
+    }
+    
+    /**
+     * Returns all players as a JSON string.
+     * 
+     * @return A <code>List</code> of <code>DropDownDto</code> objects as a JSON string.
+     */
+    @RequestMapping(value = "/json/getAllPlayers.do")
+    public @ResponseBody
+    List<DropDownDto> getAllPlayers() {
+
+        log.info("getAllPlayers: starting...");
+        List<DropDownDto> dropDownList = teamService.getAllPlayersAsDropDown();
+        log.info("getAllPlayers: returning...");
+        return dropDownList;
     }
 
 }

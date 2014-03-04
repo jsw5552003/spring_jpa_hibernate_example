@@ -1,0 +1,60 @@
+@CHARSET "ISO-8859-1";
+.ui-button{
+	height: 1.8em;
+}
+
+#productLineLabelDiv{
+	margin-top:5px;
+}
+
+#linksBox{
+	margin-top:-10px !important;
+}
+
+#assessmentContentHolder{
+	margin-top:-20px !important;	
+}
+
+#questionSelectBox{
+	margin-top:-20px !important;	
+}
+
+#assessmentForm{
+	margin-top:-20px !important;	
+}
+
+.ui-progressbar-value{
+	background: green !important;
+}
+
+.ui-progressbar .ui-progressbar-value{	
+	height: 100%;
+	margin:-1px;
+}
+
+.ui-widget-header{
+	background: #cccccc;
+	border: 1px solid #AAAAAA;
+}
+
+.ie8BarHolder{
+	width: 95%; 
+	height:7px;
+    background: #cccccc;
+	border: 1px solid #AAAAAA;
+	margin-top:-10px;
+}
+
+.ie8BarFillCurrent{
+	height: 100%;
+	background: green;
+}
+
+.ie8BarFillPrevious{
+	height: 100%;
+	background: orange;
+}
+
+input[type="radio"]:focus { 
+	outline: none;
+}
